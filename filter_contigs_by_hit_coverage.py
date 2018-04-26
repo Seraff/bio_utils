@@ -57,7 +57,7 @@ if __name__ == '__main__':
     cnt = int(subprocess.check_output('grep -c ">" %s' % options.fasta, shell=True))
     pb = progressbar.ProgressBar(max_value=cnt)
 
-    intervals = load_intervals_from_blast(options.hits)
+    intervals = load_intervals_from_blast(options.hits, target=options.target)
     fasta_sequences = SeqIO.parse(open(options.fasta), 'fasta')
 
     with open(options.output, 'w') as out_f:
