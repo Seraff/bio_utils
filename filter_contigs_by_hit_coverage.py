@@ -69,7 +69,7 @@ if __name__ == '__main__':
 
             pct = float(hits_len)/float(len(record)) * 100
 
-            if pct <= options.threshold:
+            if pct <= float(options.threshold):
                 SeqIO.write(record, out_f, "fasta")
 
             pb.update(i+1)
