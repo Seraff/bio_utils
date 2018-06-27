@@ -13,11 +13,11 @@ BLAST_DELIMITER = ','
 
 def parse_options():
     parser = OptionParser()
-    parser.add_option("-f", "--fasta", help="Input contigs file (.fasta)")
+    parser.add_option("-f", "--fasta", help="Input fasta file (.fasta)")
     parser.add_option("-b", "--hits", help="Input BLAST hit file (.csv)")
     parser.add_option("-o", "--output", default="filtered.fasta", help="Filtered contigs file (.fasta)")
-    parser.add_option("--threshold", default=15, help="Filter if hits coverage less than threshold%")
-    parser.add_option("-t", "--target", default="query", help="Subject or query")
+    parser.add_option("--threshold", default=15, help="Filter if hits coverage less than threshold (in %)")
+    parser.add_option("-t", "--target", default="query", help="subject or query (query by default)")
     return parser.parse_args()[0]
 
 
@@ -50,6 +50,8 @@ def calc_intervals_sum_len(intervals):
     for i in intervals:
         len += i.upper - i.lower + 1
     return len
+
+
 
 if __name__ == '__main__':
     options = parse_options()
