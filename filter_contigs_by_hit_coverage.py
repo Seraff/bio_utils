@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Author: Serafim Nenarokov, 2018
 
-import re, textwrap
+import re
 import argparse
 import subprocess
 
@@ -19,11 +19,11 @@ def parse_options():
     The script filters contigs in fasta file by the BLAST 
     hits coverage and provided criteria: threshold and conditions.
     \n\n
-    Example: ./filter_contigs_by_hit_coverage.py -f ./test.fasta -b --threshold 20 ./test.csv --condition le
+    Example: ./filter_contigs_by_hit_coverage.py -f ./test.fasta -b ./test.csv --threshold 20 --condition le
     This command will calculate hit coverage of contigs from ./test.fasta 
     and extract them if the following condition is satisfied: hit_coverage <= 20%
     \n\n
-    Example: ./filter_contigs_by_hit_coverage.py -f ./test.fasta -b --threshold 50 ./test.csv --condition b
+    Example: ./filter_contigs_by_hit_coverage.py -f ./test.fasta -b ./test.csv --threshold 50 --condition b
     Condition for contigs extracted: hit_coverage > 20%
     """
 
